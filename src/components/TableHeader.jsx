@@ -1,13 +1,13 @@
 import React from 'react'
-
+import '../style/tableheader.css'
 const TableHeader = () => {
   return (
-    <div style={{display:"flex", gap:"10px"}}>
-        <input type="checkbox" name="" id="" />
-        <p>name</p>
-        <p>email</p>
-        <p>role</p>
-        <p>actions</p>
+    <div className='table-header-container'>
+        <input type="checkbox" name=""/>
+        <p className='header-name'>name</p>
+        <p className='header-email'>email</p>
+        <p className='header-role'>role</p>
+        <p className='header-action'>actions</p>
     </div>
   )
 }

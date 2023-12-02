@@ -28,7 +28,7 @@ export const DataProvider = ({ children }) => {
 
   const context = {
     "data":Api_Data,
-    "total_pages" : Api_Data.length/10
+    "total_pages" : Math.ceil(Api_Data.length/10)
   }
 
   return <DataContext.Provider value={context}>{children}</DataContext.Provider>;

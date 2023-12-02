@@ -1,17 +1,16 @@
 import React, { useContext, useEffect } from 'react'
-import DataContext from '../context/DataContext'
-
+import "../style/row.css"
 const Row = ({item}) => {
     const handleCheck = (e) => {
         console.log(e.target.value, e.target.checked);
     }
   return (
-    <div style={{display:"flex", gap:"10px"}}>
-        <input type="checkbox" name="" value={item.id} onChange={handleCheck} />
-        <p>{item.name}</p>
-        <p>{item.email}</p>
-        <p>{item.role}</p>
-        <p>actions</p>
+    <div className='row-conatiner'>
+        <input type="checkbox" name="" id="" className='checkbox' value={item.id} onChange={handleCheck}/>
+        <p className='name'>{item.name}</p>
+        <p className='email'>{item.email}</p>
+        <p className='role'>{item.role}</p>
+        <p className='action'>actions</p>
     </div>
   )
 }
