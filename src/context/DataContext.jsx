@@ -20,7 +20,10 @@ export const DataProvider = ({ children }) => {
         const response = await (
           await fetch(BASE_URL, { method: "GET" })
         ).json();
-        if (response.length > 0) {setData(response); setInitialData(response)};
+        if (response.length > 0) {
+          setData(response);
+          setInitialData(response);
+        }
       } catch (error) {
         console.error(error);
       }
@@ -45,10 +48,10 @@ export const DataProvider = ({ children }) => {
     console.log(data);
   };
   const getSelectedRow = (id) => {
+    console.log(id);
     if (Array.isArray(id)) {
       setSelectedRow(id);
-    }
-    else{
+    } else {
       setSelectedRow((prevSelectedRow) => [...prevSelectedRow, id - 1]);
     }
   };
@@ -59,23 +62,26 @@ export const DataProvider = ({ children }) => {
 
   const unSelectRow = (id) => {
     if (Array.isArray(id)) {
-      setSelectedRow([])
+      setSelectedRow([]);
     } else {
       setSelectedRow((prevSelectedRow) =>
         prevSelectedRow.filter((i) => i !== id - 1)
       );
     }
+    return false
   };
 
   const onSelectedDelete = () => {
-    let updatedData = data;
-    console.log(updatedData);
-    console.log(selectedRow);
-    for (let i = 0; i < selectedRow.length; i++) {
-      updatedData.splice(selectedRow[i], 1);
-    }
+    const updatedData = [...data];
+
+    const sortedSelectedRow = [...selectedRow].sort((a, b) => b - a);
+
+    sortedSelectedRow.forEach((index) => {
+      updatedData.splice(index, 1);
+    });
     console.log(updatedData);
     setData(updatedData);
+    setSelectedRow([]);
   };
 
   const context = {

@@ -72,7 +72,7 @@ const Table = () => {
   const toggleSelectAllPage = (is_check) => {
     console.log(is_check);
     if (is_check) {
-      const currentPageRows = paginated_data.current_data.map(item => item.id);
+      const currentPageRows = paginated_data.current_data.map(item => item.id-1);
       console.log(currentPageRows);
       getSelectedRow(currentPageRows);
     } else {
