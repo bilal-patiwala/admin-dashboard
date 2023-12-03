@@ -1,7 +1,6 @@
 import { createContext, useEffect } from "react";
 import { useState } from "react";
 import { React, useContext } from "react";
-import Api_Data from "../assets/api_data.json";
 const BASE_URL =
   "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json";
 
@@ -10,23 +9,23 @@ const DataContext = createContext("");
 export default DataContext;
 
 export const DataProvider = ({ children }) => {
-  const [data, setData] = useState(Api_Data);
-  const [initialData, setInitialData] = useState(Api_Data);
+  const [data, setData] = useState([]);
+  const [initialData, setInitialData] = useState([]);
   const [isSearchEmpty, setSearchEmpty] = useState(true);
   const [selectedRow, setSelectedRow] = useState([]);
 
   useEffect(() => {
-    // const getData = async () => {
-    //   try {
-    //     const response = await (
-    //       await fetch(BASE_URL, { method: "GET" })
-    //     ).json();
-    //     if (response.length > 0) {setData(response); setInitialData(response)};
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // };
-    // getData();
+    const getData = async () => {
+      try {
+        const response = await (
+          await fetch(BASE_URL, { method: "GET" })
+        ).json();
+        if (response.length > 0) {setData(response); setInitialData(response)};
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getData();
   }, []);
 
   const getSearchData = (searchParam) => {
