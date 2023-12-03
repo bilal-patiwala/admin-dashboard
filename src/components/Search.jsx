@@ -10,7 +10,6 @@ const Search = () => {
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      // Perform search when Enter key is pressed
       getSearchData(searchParam);
     }
   };
