@@ -43,14 +43,14 @@ const PaginationButton = ({ total_pages, paginate }) => {
         )}
         <div className="pagination">
           {pageNumbers.map((number) => (
-            <a
+            <button
               key={number}
               onClick={() => handlePageClick(number)}
-              href="#"
+              // href="#"
               className={`numbers ${at_page == number ? "active" : ""}`}
             >
               {number}
-            </a>
+            </button>
           ))}
         </div>
         {at_page == total_pages ? (
