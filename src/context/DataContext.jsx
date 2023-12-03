@@ -52,7 +52,7 @@ export const DataProvider = ({ children }) => {
     if (Array.isArray(id)) {
       setSelectedRow(id);
     } else {
-      setSelectedRow((prevSelectedRow) => [...prevSelectedRow, id - 1]);
+      setSelectedRow((prevSelectedRow) => [...prevSelectedRow, id]);
     }
   };
 
@@ -65,7 +65,7 @@ export const DataProvider = ({ children }) => {
       setSelectedRow([]);
     } else {
       setSelectedRow((prevSelectedRow) =>
-        prevSelectedRow.filter((i) => i !== id - 1)
+        prevSelectedRow.filter((i) => i !== id)
       );
     }
     return false
@@ -73,7 +73,7 @@ export const DataProvider = ({ children }) => {
 
   const onSelectedDelete = () => {
     const updatedData = [...data];
-
+    console.log(selectedRow);
     const sortedSelectedRow = [...selectedRow].sort((a, b) => b - a);
 
     sortedSelectedRow.forEach((index) => {

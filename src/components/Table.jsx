@@ -46,7 +46,7 @@ const Table = () => {
   };
 
   const deleteCurrentRow = (id) => {
-    const updatedData = paginated_data.data.filter((item) => item.id !== id);
+    const updatedData = paginated_data.data.filter((item, index) => item.id !== id);
 
     const newPageCount = Math.ceil(
       updatedData.length / paginated_data.row_per_page
@@ -72,7 +72,7 @@ const Table = () => {
   const toggleSelectAllPage = (is_check) => {
     console.log(is_check);
     if (is_check) {
-      const currentPageRows = paginated_data.current_data.map(item => item.id-1);
+      const currentPageRows = paginated_data.current_data.map((item, index) => index);
       console.log(currentPageRows);
       getSelectedRow(currentPageRows);
     } else {

@@ -4,7 +4,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { HiCheck } from "react-icons/hi2";
 
 import "../style/row.css";
-const Row = ({ item, deleteCurrentRow, getSelectedRow, unSelectRow }) => {
+const Row = ({ item,index, deleteCurrentRow, getSelectedRow, unSelectRow }) => {
   const [is_checked, setIsChecker] = useState(false);
   const [is_edit, setISEdit] = useState(false);
   const [edited_name, setEditedName] = useState("");
@@ -58,7 +58,7 @@ const Row = ({ item, deleteCurrentRow, getSelectedRow, unSelectRow }) => {
           name=""
           id=""
           className="checkbox"
-          value={item.id}
+          value={index}
           onChange={handleCheck}
         />
       </td>
