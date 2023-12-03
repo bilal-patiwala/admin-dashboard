@@ -40,8 +40,7 @@ export const DataProvider = ({ children }) => {
         (item) =>
           item.name.toLowerCase().indexOf(searchParam) !== -1 ||
           item.email.toLowerCase().indexOf(searchParam) !== -1 ||
-          item.role.toLowerCase().includes(searchParam) ||
-          item.id.includes(searchParam)
+          item.role.toLowerCase().includes(searchParam)
       );
       setData(searchData);
     }

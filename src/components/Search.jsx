@@ -20,7 +20,7 @@ const Search = () => {
   }
   return (
     <div>
-      <input type="text" name="" value={searchParam} id="" placeholder='Search Name, Email, id, role' className='search-field' onChange={handleSearchText} onKeyDown={handleKeyDown}/>
+      <input type="text" name="" value={searchParam} id="" placeholder='Search Name, Email, role' className='search-field' onChange={handleSearchText} onKeyDown={handleKeyDown}/>
       <button className='search-icon' onClick={handleSearch}>Search</button>
     </div>
   )
