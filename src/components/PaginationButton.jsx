@@ -24,7 +24,15 @@ const PaginationButton = ({ total_pages, paginate }) => {
   return (
     <>
       <div className="paginated-btn">
-        <HiChevronDoubleLeft onClick={() => handlePageClick(1)} className="btn first-btn" />
+        {at_page == 1 ? (
+          <HiChevronDoubleLeft disabled className="btn first-btn" />
+        ) : (
+          <HiChevronDoubleLeft
+            onClick={() => handlePageClick(1)}
+            className="btn first-btn"
+          />
+        )}
+
         {at_page == 1 ? (
           <HiChevronLeft disabled className="btn prev-btn" />
         ) : (
@@ -35,17 +43,35 @@ const PaginationButton = ({ total_pages, paginate }) => {
         )}
         <div className="pagination">
           {pageNumbers.map((number) => (
-            <a key={number} onClick={() => handlePageClick(number)} href="!#" className={`numbers ${at_page == number ? 'active':""}`}>
-            {number}
-          </a>
+            <a
+              key={number}
+              onClick={() => handlePageClick(number)}
+              href="!#"
+              className={`numbers ${at_page == number ? "active" : ""}`}
+            >
+              {number}
+            </a>
           ))}
         </div>
         {at_page == total_pages ? (
           <HiChevronRight disabled className="btn next" />
         ) : (
-            <HiChevronRight onClick={() => handlePageClick(at_page + 1)} className="btn next" />
+          <HiChevronRight
+            onClick={() => handlePageClick(at_page + 1)}
+            className="btn next"
+          />
         )}
-        <HiChevronDoubleRight onClick={() => handlePageClick(total_pages)} className="btn last" />
+        {at_page == total_pages ? (
+          <HiChevronDoubleRight
+          disabled
+          className="btn last"
+        />
+        ) : (
+          <HiChevronDoubleRight
+            onClick={() => handlePageClick(total_pages)}
+            className="btn last"
+          />
+        )}
       </div>
     </>
   );

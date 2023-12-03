@@ -1,69 +1,63 @@
 .paginated-btn{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin: 5px;
 }
 
 
-.first-btn{
-    flex-basis: 10%;
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+.first-btn,
+.prev-btn,
+.next,
+.last {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
 }
-
-.prev-btn{
-    flex-basis: 10%;
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-}
-
 
 
 .btn{ 
-    width: 20px;
-    height: 40px;
-    padding: 3px;
-    margin: 10px;
+    padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+    border:1px solid #c3c3c3;
 }
 
 .pagination{
     display: flex;
-    gap: 15px;
 }
+
 
 .numbers{
     width: 40px;
     height: 40px;
     padding: 3px;
     font-size: 20px;
+    margin-left: 5px;
     text-align: center;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+    border: 1px solid #c3c3c3;
 }
 
 .active{
     border: 1px solid black;
 }
 
-
-.next{
-    flex-basis: 10%;
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+.btn[disabled]{
+    cursor: not-allowed;
 }
 
 
+@media (max-width: 470px) {
+    .btn {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
 
-.last{
-    flex-basis: 10%;
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+    .numbers {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
 }
+

@@ -1,17 +1,21 @@
 import "./App.css";
-import { DataProvider } from "./context/DataContext";
-import { AiOutlineDelete } from "react-icons/ai";
+import DataContext, { DataProvider } from "./context/DataContext";
 import Row from "./components/Row";
 import Search from "./components/Search";
 import Table from "./components/Table";
+import PaginationButton from "./components/PaginationButton";
+import { useContext } from "react";
+import SelectedDelete from "./components/SelectedDelete";
 const App = () => {
   return (
     <>
       <DataProvider>
         <div className="nav">
-          <Search />
+          <div>
+            <Search />
+          </div>
+          <SelectedDelete/>
         </div>
-        {/* <div><AiOutlineDelete color='white'width="50px" height="50px"/></div> */}
         <Table />
       </DataProvider>
     </>
