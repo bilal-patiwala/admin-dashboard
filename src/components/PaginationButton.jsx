@@ -46,7 +46,7 @@ const PaginationButton = ({ total_pages, paginate }) => {
             <a
               key={number}
               onClick={() => handlePageClick(number)}
-              href="!#"
+              href="#"
               className={`numbers ${at_page == number ? "active" : ""}`}
             >
               {number}
