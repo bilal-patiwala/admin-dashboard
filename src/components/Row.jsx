@@ -62,7 +62,7 @@ const Row = ({ item, deleteCurrentRow, getSelectedRow, unSelectRow }) => {
           onChange={handleCheck}
         />
       </td>
-      <td className="px-6 py-4 text-gray-900 whitespace-nowrap">
+      <td className="px-6 py-4 text-black whitespace-nowrap">
         {is_edit ? (
           <input
             type="text"
@@ -74,7 +74,7 @@ const Row = ({ item, deleteCurrentRow, getSelectedRow, unSelectRow }) => {
           <p>{item.name}</p>
         )}
       </td>
-      <td className="px-6 py-4">
+      <td className="px-6 text-black py-4">
         {is_edit ?
         <input
           type="email"
@@ -84,7 +84,7 @@ const Row = ({ item, deleteCurrentRow, getSelectedRow, unSelectRow }) => {
         />
         : ( <p>{item.email}</p> )}
       </td>
-      <td className="px-6 py-4">
+      <td className="px-6 text-black py-4">
         {is_edit ?
         <input
           type="text"
