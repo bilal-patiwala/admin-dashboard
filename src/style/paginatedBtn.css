@@ -5,10 +5,10 @@
 }
 
 
-.first-btn,
-.prev-btn,
-.next,
-.last {
+.first-page,
+.previous-page,
+.next-page,
+.last-page {
     width: 40px;
     height: 40px;
     margin-left: 5px;

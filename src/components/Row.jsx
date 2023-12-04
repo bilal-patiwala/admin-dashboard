@@ -96,7 +96,7 @@ const Row = ({ item,index, deleteCurrentRow, getSelectedRow, unSelectRow }) => {
       </td>
       <td className="px-6 py-4 flex gap-3">
         {is_edit ? (
-          <HiCheck className="check" onClick={handleCheckEdit} />
+          <HiCheck className="save" onClick={handleCheckEdit} />
         ) : (
           <FaRegEdit className="edit" onClick={handleEdit} />
         )}
