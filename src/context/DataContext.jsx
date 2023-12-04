@@ -1,8 +1,7 @@
 import { createContext, useEffect } from "react";
 import { useState } from "react";
 import { React, useContext } from "react";
-
-const BASE_URL ="https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json";
+const BASE_URL =import.meta.env.VITE_API;
 
 const DataContext = createContext("");
 
