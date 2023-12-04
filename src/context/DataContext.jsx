@@ -1,8 +1,7 @@
 import { createContext, useEffect } from "react";
 import { useState } from "react";
 import { React, useContext } from "react";
-const BASE_URL =
-  "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json";
+const BASE_URL =import.meta.env.VITE_API;
 
 const DataContext = createContext("");
 
@@ -32,7 +31,6 @@ export const DataProvider = ({ children }) => {
   }, []);
 
   const getSearchData = (searchParam) => {
-    console.log(searchParam);
     if (searchParam.trim() === "") {
       setData(initialData);
     } else {
@@ -44,10 +42,8 @@ export const DataProvider = ({ children }) => {
       );
       setData(searchData);
     }
-    console.log(data);
   };
   const getSelectedRow = (id) => {
-    console.log(id);
     if (Array.isArray(id)) {
       setSelectedRow(id);
     } else {
@@ -56,7 +52,6 @@ export const DataProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log(selectedRow);
   }, [selectedRow]);
 
   const unSelectRow = (id) => {
@@ -72,13 +67,11 @@ export const DataProvider = ({ children }) => {
 
   const onSelectedDelete = () => {
     const updatedData = [...data];
-    console.log(selectedRow);
     const sortedSelectedRow = [...selectedRow].sort((a, b) => b - a);
 
     sortedSelectedRow.forEach((index) => {
       updatedData.splice(index, 1);
     });
-    console.log(updatedData);
     setData(updatedData);
     setSelectedRow([]);
   };

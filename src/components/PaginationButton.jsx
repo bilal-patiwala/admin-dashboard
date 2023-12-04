@@ -18,7 +18,6 @@ const PaginationButton = ({ total_pages, paginate }) => {
   };
 
   useEffect(() => {
-    console.log(at_page);
   }, [at_page]);
 
   return (
